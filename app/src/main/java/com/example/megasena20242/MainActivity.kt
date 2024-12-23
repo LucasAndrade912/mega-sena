@@ -60,6 +60,7 @@ fun NumerosSena(megaSena: MegaSena, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Text(text="Números da Mega Sena")
         TextField(
             value = serieApostada,
             onValueChange = { serieApostada = it },
@@ -72,6 +73,15 @@ fun NumerosSena(megaSena: MegaSena, modifier: Modifier = Modifier) {
             }
         ) {
             Text("Verificar números")
+        }
+        Button(
+            onClick = {
+                mostrarNumeros = false
+                serieApostada = ""
+                Log.d("Redefinição", "Aposta redefinida.")
+            }
+        ) {
+            Text("Redefinir")
         }
         if (mostrarNumeros) {
             var corAtual = Color.Red
